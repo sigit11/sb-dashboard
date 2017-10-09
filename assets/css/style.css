@@ -432,3 +432,9 @@ table.dataTable thead .sorting:after {
     border-left-width: 0;
   }
 }
+.footer {
+  padding-top: 17px;
+  padding-right: 15px;
+  padding-bottom: 17px;
+  padding-left: 15px;
+}
