@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);*/
 body {
   font-family: 'Open Sans', 'sans-serif';
   background: #f0f0f0;
@@ -172,6 +172,15 @@ ul.dropdown-cart li .item-right button{
   right: 0;
   z-index: 9999;
 }
-.search-query:focus + button {
+/*.search-query:focus + button {
   z-index: 3;   
 }
+
+.chat-user-list ul {
+    border: 0;
+}
+@media (max-width: 768px) {
+    .chat-user-list {
+        padding: 0;
+    }
+}*/

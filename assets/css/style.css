@@ -502,3 +502,11 @@ table.dataTable thead .sorting:after {
 .mega-dropdown-menu .form-group {
     margin-bottom: 3px;
 }
+
+.sidebar-right{
+  width: 300px;
+  right: 0;
+  top: 0;
+  position: absolute;
+  z-index: 1;
+}
