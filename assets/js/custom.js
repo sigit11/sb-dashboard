@@ -41,3 +41,19 @@ $(function() {
     }
 });
 
+$(".myToggle").click(function () {
+
+    // Set the effect type
+    var effect = 'slide';
+    var duration = 500;
+
+    $('#rightMenu').toggle;
+});
+
+$(document).ready(function(){
+    $(".slide-toggle").click(function(){
+        $("#rightMenu").animate({
+            width: "toggle"
+        });
+    });
+});
