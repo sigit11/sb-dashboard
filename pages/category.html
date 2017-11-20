@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard - Bootstrap Admin Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../assets/css/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="../assets/css/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="../assets/css/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="../assets/css/style2.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+	<title>belajar javascript</title>
+	<style type="text/css">
+		#tab {
+		    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+		    border-collapse: collapse;
+		    width: 100%;
+		}
+
+		#tab td, #tab th {
+		    border: 1px solid #ddd;
+		    padding: 8px;
+		}
+
+		#tab tr:nth-child(even){background-color: #f2f2f2;}
+
+		#tab tr:hover {background-color: #ddd;}
+
+		#tab th {
+		    padding-top: 12px;
+		    padding-bottom: 12px;
+		    text-align: left;
+		    background-color: #4CAF50;
+		    color: white;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js"></script>
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Sigit Dashboard</a>
+            </div>
+            <!-- /.navbar-header -->
+    
+            <ul class="nav navbar-top-links navbar-left">
+                <li class="dropdown mega-dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mega <i class="fa fa-chevron-down"></i></a>
+                    
+                    <ul class="dropdown-menu mega-dropdown-menu row">
+                        <li class="col-md-3">
+                            <ul>
+                                <li class="dropdown-header">New in Stores</li>                            
+                                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                  <div class="carousel-inner">
+                                    <div class="item active">
+                                        <a href="#"><img src="http://placehold.it/254x150/3498db/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 1"></a>
+                                        <h4><small>Summer dress floral prints</small></h4>                                        
+                                        <button class="btn btn-primary" type="button">49,99 €</button> <button href="#" class="btn btn-default" type="button"><span class="fa fa-heart"></span> Add to Wishlist</button>       
+                                    </div><!-- End Item -->
+                                    <div class="item">
+                                        <a href="#"><img src="http://placehold.it/254x150/ef5e55/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 2"></a>
+                                        <h4><small>Gold sandals with shiny touch</small></h4>                                        
+                                        <button class="btn btn-primary" type="button">9,99 €</button> <button href="#" class="btn btn-default" type="button"><span class="fa fa-heart"></span> Add to Wishlist</button>        
+                                    </div><!-- End Item -->
+                                    <div class="item">
+                                        <a href="#"><img src="http://placehold.it/254x150/2ecc71/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 3"></a>
+                                        <h4><small>Denin jacket stamped</small></h4>                                        
+                                        <button class="btn btn-primary" type="button">49,99 €</button> <button href="#" class="btn btn-default" type="button"><span class="fa fa-heart"></span> Add to Wishlist</button>      
+                                    </div><!-- End Item -->                                
+                                  </div><!-- End Carousel Inner -->
+                                </div><!-- /.carousel -->
+                                <li class="divider"></li>
+                                <li><a href="#">View all Collection <i class="fa fa-chevron-right"></i></span></a></li>
+                            </ul>
+                        </li>
+                        <li class="col-md-3">
+                            <ul>
+                                <li class="dropdown-header">Dresses</li>
+                                <li><a href="#">Unique Features</a></li>
+                                <li><a href="#">Image Responsive</a></li>
+                                <li><a href="#">Auto Carousel</a></li>
+                                <li><a href="#">Newsletter Form</a></li>
+                                <li><a href="#">Four columns</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">Tops</li>
+                                <li><a href="#">Good Typography</a></li>
+                            </ul>
+                        </li>
+                        <li class="col-md-3">
+                            <ul>
+                                <li class="dropdown-header">Jackets</li>
+                                <li><a href="#">Easy to customize</a></li>
+                                <li><a href="#">Glyphicons</a></li>
+                                <li><a href="#">Pull Right Elements</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">Pants</li>
+                                <li><a href="#">Coloured Headers</a></li>
+                                <li><a href="#">Primary Buttons & Default</a></li>
+                                <li><a href="#">Calls to action</a></li>
+                            </ul>
+                        </li>
+                        <li class="col-md-3">
+                            <ul>
+                                <li class="dropdown-header">Accessories</li>
+                                <li><a href="#">Default Navbar</a></li>
+                                <li><a href="#">Lovely Fonts</a></li>
+                                <li><a href="#">Responsive Dropdown </a></li>                           
+                                <li class="divider"></li>
+                                <li class="dropdown-header">Newsletter</li>
+                                <form class="form" role="form">
+                                  <div class="form-group">
+                                    <label class="sr-only" for="email">Email address</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Enter email">                                                              
+                                  </div>
+                                  <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                </form>                                                       
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+         
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a id="flag" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="../assets/images/English.png" alt="English" width="28px" height="18px">
+                        <span>English</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-flag" role="menu">
+                        <li>
+                            <a href="#">
+                                <img src="../assets/images/English.png" alt="English" width="28px" height="18px">
+                                <span>English</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../assets/images/spain.png" alt="spain" width="28px" height="18px">
+                                <span>Spanis</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../assets/images/portuguese.png" alt="portuguese" width="28px" height="18px">
+                                <span>Portuguese</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../assets/images/France.png" alt="France" width="28px" height="18px">
+                                <span>Francais</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope fa-fw"></i>
+                        <span class="label label-success bg-success">10</span> <!-- <i class="fa fa-caret-down"></i> -->
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a>
+                                <h6>Notifications
+                                    <span class="item-right">
+                                        <button class="btn btn-xs btn-danger pull-right">NEW</button>
+                                    </span>
+                                </h6>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Today</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-tasks fa-fw"></i>
+                        <span class="label label-success bg-success">4</span> <!-- <i class="fa fa-caret-down"></i> -->
+                    </a>
+                    <ul class="dropdown-menu dropdown-tasks">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 1</strong>
+                                        <span class="pull-right text-muted">40% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 2</strong>
+                                        <span class="pull-right text-muted">20% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 3</strong>
+                                        <span class="pull-right text-muted">60% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 4</strong>
+                                        <span class="pull-right text-muted">80% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Tasks</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-tasks -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i>
+                        <span class="label label-success bg-success">28</span> <!-- <i class="fa fa-caret-down"></i> -->
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <li class="dropdown slide-toggle" style="margin: 0;">
+                    <a href="#rightMenu" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <i class="fa fa-comments"></i><span class="label label-success bg-success">9</span></a>
+                </li>
+
+                <li class="user-img"> 
+                    <a id="user-profile" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <!-- <img src="../assets/images/user.png" alt="user photo" class="img-circle" style="
+                    height: 30px;"> --><i class="fa fa-user fa-fw"></i> Jhon <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-lock fa-fw"></i> Lock screen</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="dropdown">
+                            <a id="user-profile" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="../assets/images/user.png" alt="user photo" class="img-circle" style="height: 36px;"> Jhon <span class="fa arrow"></span>
+                            </a>
+                            <ul class="nav nav-second-level">
+                                <li><a href="#"><i class="fa fa-user fa-fw"></i> View Profile</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="flot.html">Flot Charts</a>
+                                </li>
+                                <li>
+                                    <a href="morris.html">Morris.js Charts</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Post</a>
+                        </li>
+                        <li>
+                            <a href="category.html"><i class="fa fa-table fa-fw"></i> Category</a>
+                        </li>
+                        <li>
+                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div> 
+        </nav>
+
+        <div id="rightMenu" class="sidebar-right list-group chat-user-list animate-right sidebar ">
+            <div id="custom-search-input">
+                <div class="input-group"> 
+                    <input type="text" class="  search-query form-control" placeholder="Search Friend" />
+                    <button class="btn btn-danger" type="button">
+                    <span class=" fa fa-search"></span>
+                        
+                </div>
+                <!-- <button style="right: 0; top: 0;" onclick="closeRightMenu()">&times;</button> -->
+            </div>
+            <a href="#" style="padding: 2px;" class="list-group-item">
+                <div class="media-left" style="width: 50px;text-align: center;">
+                    <div>
+                        <img class="img-circle" title="User1" alt="User1" src="../assets/images/user.png" style="height: 50px" />
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="media-heading">
+                        Jhon
+                    </div>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right"></button>
+                    </span>
+                </div>
+            </a>
+            <a href="#" style="padding: 2px;" class="list-group-item">
+                <div class="media-left" style="width: 50px;text-align: center;">
+                    <div>
+                        <img class="img-circle" title="User1" alt="User1" src="../assets/images/user.png" style="height: 50px" />
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="media-heading">
+                        Farah
+                    </div>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right"></button>
+                    </span>
+                </div>
+            </a>
+            <a href="#" style="padding: 2px;" class="list-group-item">
+                <div class="media-left" style="width: 50px;text-align: center;">
+                    <div>
+                        <img class="img-circle" title="User1" alt="User1" src="../assets/images/user.png" style="height: 50px" />
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="media-heading">
+                        Ari
+                    </div>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right"></button>
+                    </span>
+                </div>
+            </a>
+            <a href="#" style="padding: 2px;" class="list-group-item">
+                <div class="media-left" style="width: 50px;text-align: center;">
+                    <div height="40px">
+                        <img class="img-circle" title="User1" alt="User1" src="../assets/images/user.png" style="height: 50px"/>
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="media-heading">
+                        Marry
+                    </div>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right"></button>
+                    </span>
+                </div>
+            </a>
+            <a href="#" style="padding: 2px;" class="list-group-item">
+                <div class="media-left" style="width: 50px;text-align: center;">
+                    <div height="40px">
+                        <img class="img-circle" title="User1" alt="User1" src="../assets/images/user.png" style="height: 50px" />
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="media-heading">
+                        Steven
+                    </div>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right"></button>
+                    </span>
+                </div>
+            </a>
+            <a href="#" style="padding: 2px;" class="list-group-item">
+                <div class="media-left" style="width: 50px;text-align: center;">
+                    <div height="40px">
+                        <img class="img-circle" title="User1" alt="User1" src="../assets/images/user.png" style="height: 50px" />
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="media-heading">
+                        Kevin
+                    </div>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right"></button>
+                    </span>
+                </div>
+            </a>
+            <a href="#" style="padding: 2px;" class="list-group-item">
+                <div class="media-left" style="width: 50px;text-align: center;">
+                    <div height="40px">
+                        <img class="img-circle" title="User1" alt="User1" src="../assets/images/user.png" style="height: 50px" />
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="media-heading">
+                        Jessica
+                    </div>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right"></button>
+                    </span>
+                </div>
+            </a>
+            <a href="#" style="padding: 2px;" class="list-group-item">
+                <div class="media-left" style="width: 50px;text-align: center;">
+                    <div height="40px">
+                        <img class="img-circle" title="User1" alt="User1" src="../assets/images/user.png" style="height: 50px" />
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="media-heading">
+                        Mila
+                    </div>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right"></button>
+                    </span>
+                </div>
+            </a>
+            <a href="#" style="padding: 2px;" class="list-group-item">
+                <div class="media-left" style="width: 50px;text-align: center;">
+                    <div height="40px">
+                        <img class="img-circle" title="User1" alt="User1" src="../assets/images/user.png" style="height: 50px" />
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="media-heading">
+                        Rangga
+                    </div>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right"></button>
+                    </span>
+                </div>
+            </a>
+            <a href="#" style="padding: 2px;" class="list-group-item">
+                <div class="media-left" style="width: 50px;text-align: center;">
+                    <div height="40px">
+                        <img class="img-circle" title="User1" alt="User1" src="../assets/images/user.png" style="height: 50px" />
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="media-heading">
+                        Maya
+                    </div>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right"></button>
+                    </span>
+                </div>
+            </a>
+
+        </div>
+
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-header">Category</h1>
+                </div>
+                <!-- /.col-md-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            DataTables Category
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+							<table id="tab">
+								<tr><th>Id</th><th>Name</th><th>Description</th><th>Link</th><th>Parent</th></tr>
+							</table>
+							<script type="text/javascript">
+							
+							var _tab = document.getElementById("tab");
+
+							// Make a request for a user with a given ID
+							axios.get('http://www.boombastis.com/wp-json/wp/v2/categories?parent=0')
+							.then(function (response) {
+								var data = response.data;
+								data.map((_data, i) => {
+									console.log(_data);
+									var _txtb = document.createTextNode(_data.name);
+									var _txtid = document.createTextNode(_data.id);
+									var _txtdes = document.createTextNode(_data.description);
+									var createA = document.createElement('a');
+        							var createAText = document.createTextNode(_data.link);
+									var _txtlink = document.createTextNode(_data.link);
+									var _txtpar = document.createTextNode(_data.parent);
+
+
+									createA.setAttribute('href', _data.link);
+        							createA.appendChild(createAText);
+
+									var _tr = document.createElement("tr");
+
+									var _tdid = document.createElement("td");
+									var _tdb = document.createElement("td");
+									var _tdc = document.createElement("td");
+									var _tdlink = document.createElement("td");
+									var _tdpar = document.createElement("td");
+
+									_tdid.appendChild(_txtid);
+									_tdb.appendChild(_txtb);
+									_tdc.appendChild(_txtdes);
+									_tdlink.appendChild(createA);
+									_tdpar.appendChild(_txtpar);
+
+									_tr.appendChild(_tdid);
+									_tr.appendChild(_tdb);
+									_tr.appendChild(_tdc);
+									_tr.appendChild(_tdlink);
+									_tr.appendChild(_tdpar);
+									_tab.appendChild(_tr);
+
+								});      
+							})
+							.catch(function (error) {
+							  console.log(error);
+							});
+
+							</script>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- jQuery -->
+    <script src="../assets/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../assets/js/metisMenu.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../assets/js/custom2.js"></script>
+    <script src="../assets/js/custom.js"></script>
+</body>
+</html>
